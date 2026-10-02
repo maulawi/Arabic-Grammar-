@@ -1,0 +1,299 @@
+/* ==========================================================================
+   QURRA Grammar — Qur'an interaction system (Phase 4)
+   QuranVerse (Read/Explore toggle, tap-a-word) and QuranWordDetail.
+   Same visual language as the Phase 3 .quran-card: dark green surface,
+   restrained gold accents, generous Arabic type. Quiet and scholarly —
+   no bright colors, no flashy states.
+   ========================================================================== */
+
+.quran-verse {
+  position: relative;
+  padding: var(--space-6) var(--space-5);
+  background: var(--qg-green-900);
+  border-radius: var(--radius-lg);
+  border: var(--border-gold-subtle);
+  overflow: hidden;
+}
+
+.quran-verse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(212,175,106,0.06) 0, transparent 40%),
+                     radial-gradient(circle at 80% 80%, rgba(212,175,106,0.05) 0, transparent 45%);
+  pointer-events: none;
+}
+
+.qv-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.qv-ref {
+  font-family: var(--qg-font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--qg-gold-400);
+}
+
+.qv-source-label {
+  font-family: var(--qg-font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--qg-text-onDark-faint);
+  padding: 2px 10px;
+  border: 1px solid rgba(212, 175, 106, 0.25);
+  border-radius: var(--radius-pill);
+}
+
+.qv-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Desktop: verse and word-detail panel sit side by side once a word is selected. */
+@media (min-width: 861px) {
+  .qv-body.has-detail {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .qv-body.has-detail .qv-arabic-wrap {
+    flex: 1 1 60%;
+    min-width: 0;
+  }
+
+  .qv-body.has-detail .qv-word-detail {
+    flex: 0 0 260px;
+  }
+}
+
+.qv-arabic-wrap {
+  text-align: center;
+}
+
+.qv-mode-toggle {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  margin-bottom: var(--space-4);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: var(--radius-pill);
+}
+
+.qv-mode-btn {
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--qg-font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--qg-text-onDark-muted);
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.qv-mode-btn:hover {
+  color: var(--qg-text-onDark);
+}
+
+.qv-mode-btn.is-active {
+  background: var(--qg-gold-600);
+  color: var(--qg-green-950);
+}
+
+.qv-arabic {
+  position: relative;
+  font-family: var(--qg-font-arabic);
+  direction: rtl;
+  font-size: 1.9rem;
+  line-height: 2.3;
+  color: var(--qg-text-onDark);
+  margin-bottom: var(--space-3);
+  word-spacing: 0.15em;
+}
+
+.qv-static {
+  /* Read-mode text is plain, non-interactive — no distracting affordances. */
+}
+
+/* Explore-mode words: individually selectable, keyboard accessible. */
+.qv-word {
+  appearance: none;
+  display: inline-block;
+  padding: 2px 6px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-family: var(--qg-font-arabic);
+  color: var(--qg-text-onDark);
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.qv-word:hover {
+  background: rgba(212, 175, 106, 0.12);
+}
+
+.qv-word:focus-visible {
+  outline: 2px solid var(--qg-gold-400);
+  outline-offset: 2px;
+}
+
+.qv-word.is-selected {
+  background: var(--qg-gold-400);
+  color: var(--qg-green-950);
+}
+
+.qv-word.is-focused:not(.is-selected) {
+  background: rgba(212, 175, 106, 0.22);
+}
+
+.qv-helper {
+  font-family: var(--qg-font-sans);
+  font-size: 0.75rem;
+  color: var(--qg-text-onDark-faint);
+  margin-bottom: var(--space-3);
+}
+
+.qv-translation {
+  position: relative;
+  font-family: var(--qg-font-serif);
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--qg-text-onDark-muted);
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+.qv-lesson-connection {
+  font-size: 0.875rem;
+  color: var(--qg-text-onDark-muted);
+  max-width: 46ch;
+  margin: var(--space-3) auto 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* QuranWordDetail                                                        */
+/* ---------------------------------------------------------------------- */
+
+.qv-word-detail {
+  padding: var(--space-4) var(--space-5);
+  background: rgba(250, 246, 236, 0.06);
+  border: var(--border-gold-subtle);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+@media (min-width: 861px) {
+  .qv-word-detail {
+    text-align: left;
+  }
+}
+
+.qv-word-detail-ar {
+  font-family: var(--qg-font-arabic);
+  direction: rtl;
+  font-size: 1.75rem;
+  color: var(--qg-gold-400);
+  margin-bottom: var(--space-2);
+}
+
+.qv-word-detail-meaning {
+  font-size: 0.875rem;
+  color: var(--qg-text-onDark-muted);
+  margin-bottom: var(--space-2);
+}
+
+.qv-word-detail-concept {
+  display: inline-block;
+  font-family: var(--qg-font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--qg-green-950);
+  background: var(--qg-gold-400);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-3);
+}
+
+.qv-word-detail-explanation {
+  font-size: 0.875rem;
+  color: var(--qg-text-onDark);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.qv-word-detail-why {
+  margin-top: var(--space-3);
+  font-size: 0.8125rem;
+  color: var(--qg-text-onDark-muted);
+}
+
+.qv-word-detail-why strong {
+  color: var(--qg-text-onDark);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Word relationship (prepared for future lessons)                        */
+/* ---------------------------------------------------------------------- */
+
+.qv-relationship {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-4);
+}
+
+.qv-relationship-word {
+  font-family: var(--qg-font-arabic);
+  font-size: 1.375rem;
+  color: var(--qg-text-onDark);
+}
+
+.qv-relationship-line {
+  width: 1px;
+  height: 14px;
+  background: rgba(212, 175, 106, 0.35);
+}
+
+.qv-relationship-label {
+  font-family: var(--qg-font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--qg-gold-400);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive                                                              */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 860px) {
+  .quran-verse {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .qv-arabic {
+    font-size: 1.625rem;
+    line-height: 2.1;
+  }
+
+  .qv-word-detail-ar {
+    font-size: 1.5rem;
+  }
+}

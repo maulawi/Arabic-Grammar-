@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QURRA Grammar</title>
+<meta name="description" content="Arabic Grammar Through the Qur'an">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/lesson.css">
+<link rel="stylesheet" href="css/quran.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="sidebar-brand-mark">Q</span>
+      <div>
+        <span class="sidebar-brand-word">QURRA</span>
+        <span class="sidebar-brand-sub">Grammar</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-link" data-nav-link href="#/home">
+        <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11.5 12 4l9 7.5M5.5 10v9a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1v-9"/></svg>
+        Home
+      </a>
+      <a class="sidebar-link" data-nav-link href="#/learning-path">
+        <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4v16M6 4l11 3.2c1 .3 1 1.7 0 2L6 12.4"/></svg>
+        Learning Path
+      </a>
+      <a class="sidebar-link" data-nav-link href="#/quran">
+        <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15.5a1 1 0 0 1-1 1H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M8 8h7M8 11.5h7"/></svg>
+        Qur'an
+      </a>
+      <a class="sidebar-link" data-nav-link href="#/practice">
+        <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11.5 11 13.5 15.5 9M12 3.5l2.3 1.2 2.6-.2 1.2 2.3 2.3 1.2-.2 2.6 1.2 2.3-2.3 1.2-1.2 2.6-2.6-.2L12 20.5l-2.3-1.2-2.6.2-1.2-2.6-2.3-1.2.2-2.6L2.5 10l2.3-1.2 1.2-2.6 2.6.2L12 3.5Z"/></svg>
+        Practice
+      </a>
+      <a class="sidebar-link" data-nav-link href="#/progress">
+        <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16M8 19v-6M13 19V9M18 19v-3"/></svg>
+        Progress
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="sidebar-link" data-nav-link href="#/settings">
+        <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="2.8"/><path d="M12 4v2.2M12 17.8V20M4 12h2.2M17.8 12H20M6.3 6.3l1.5 1.5M16.2 16.2l1.5 1.5M6.3 17.7l1.5-1.5M16.2 7.8l1.5-1.5"/></svg>
+        Settings
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile top bar -->
+  <header class="mobile-topbar">
+    <span class="sidebar-brand-mark">Q</span>
+    <span class="mobile-topbar-word">QURRA Grammar</span>
+  </header>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <div class="content-inner">
+      <div id="page-content"><!-- router renders here --></div>
+    </div>
+  </main>
+
+</div>
+
+<!-- Mobile bottom nav -->
+<nav class="mobile-bottomnav">
+  <div class="mobile-bottomnav-inner">
+    <a class="mobile-nav-link" data-nav-link href="#/home">
+      <svg class="mobile-nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11.5 12 4l9 7.5M5.5 10v9a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1v-9"/></svg>
+      Home
+    </a>
+    <a class="mobile-nav-link" data-nav-link href="#/learning-path">
+      <svg class="mobile-nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4v16M6 4l11 3.2c1 .3 1 1.7 0 2L6 12.4"/></svg>
+      Learn
+    </a>
+    <a class="mobile-nav-link" data-nav-link href="#/quran">
+      <svg class="mobile-nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15.5a1 1 0 0 1-1 1H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M8 8h7M8 11.5h7"/></svg>
+      Qur'an
+    </a>
+    <a class="mobile-nav-link" data-nav-link href="#/practice">
+      <svg class="mobile-nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11.5 11 13.5 15.5 9M12 3.5l2.3 1.2 2.6-.2 1.2 2.3 2.3 1.2-.2 2.6 1.2 2.3-2.3 1.2-1.2 2.6-2.6-.2L12 20.5l-2.3-1.2-2.6.2-1.2-2.6-2.3-1.2.2-2.6L2.5 10l2.3-1.2 1.2-2.6 2.6.2L12 3.5Z"/></svg>
+      Practice
+    </a>
+    <a class="mobile-nav-link" data-nav-link href="#/progress">
+      <svg class="mobile-nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16M8 19v-6M13 19V9M18 19v-3"/></svg>
+      Progress
+    </a>
+  </div>
+</nav>
+
+<script src="js/data.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/quranData.js"></script>
+<script src="js/quranInteraction.js"></script>
+<script src="js/lessonContent.js"></script>
+<script src="js/render.js"></script>
+<script src="js/lessonEngine.js"></script>
+<script src="js/quranRender.js"></script>
+<script src="js/lessonRender.js"></script>
+<script src="js/router.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
