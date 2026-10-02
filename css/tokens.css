@@ -1,0 +1,80 @@
+/* ==========================================================================
+   QURRA Grammar — Design Tokens
+   Source of truth: Phase 0 design system (Claude Doc, "Phase 0" tab)
+   ========================================================================== */
+
+:root {
+  /* ---- Color: Green (surfaces, dark) ---- */
+  --qg-green-950: #0B211A;   /* deepest background */
+  --qg-green-900: #123024;   /* app shell / sidebar base */
+  --qg-green-800: #17392B;   /* raised dark surfaces, cards on dark */
+  --qg-green-700: #1F4433;   /* hover state on dark surfaces */
+
+  /* ---- Color: Cream / Ivory (surfaces, light) ---- */
+  --qg-cream: #F3ECDA;       /* primary light surface */
+  --qg-ivory: #FAF6EC;       /* page background, lightest surface */
+  --qg-cream-dim: #E9DFC7;   /* subtle borders / dividers on light */
+
+  /* ---- Color: Gold (accent) ---- */
+  --qg-gold-400: #D4AF6A;    /* borders, icons, highlights */
+  --qg-gold-500: #C6A052;    /* mid accent */
+  --qg-gold-600: #B8923F;    /* primary button fill, strong accent */
+  --qg-gold-700: #9C7A32;    /* pressed / active gold */
+
+  /* ---- Color: Text ---- */
+  --qg-text-onDark: #F3ECDA;
+  --qg-text-onDark-muted: #A9B8AE;
+  --qg-text-onDark-faint: #6E8277;
+  --qg-text-onLight: #2B2B26;
+  --qg-text-onLight-muted: #5B5B50;
+  --qg-text-gold: #D4AF6A;
+
+  /* ---- Color: Semantic states ---- */
+  --qg-state-completed: #7FA37A;
+  --qg-state-locked: #6E7A72;
+  --qg-state-active-glow: rgba(212, 175, 106, 0.25);
+
+  /* ---- Fonts ---- */
+  --qg-font-serif: "Cormorant Garamond", "Georgia", serif;
+  --qg-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --qg-font-arabic: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Border ---- */
+  --border-gold-subtle: 1px solid rgba(212, 175, 106, 0.35);
+  --border-gold-strong: 1px solid rgba(212, 175, 106, 0.7);
+  --border-cream-subtle: 1px solid rgba(43, 43, 38, 0.08);
+
+  /* ---- Shadow ---- */
+  --shadow-sm: 0 1px 3px rgba(11, 33, 26, 0.08);
+  --shadow-md: 0 4px 16px rgba(11, 33, 26, 0.12);
+  --shadow-lg: 0 12px 32px rgba(11, 33, 26, 0.18);
+  --shadow-gold-glow: 0 0 0 1px rgba(212, 175, 106, 0.4), 0 4px 20px rgba(212, 175, 106, 0.15);
+
+  /* ---- Layout ---- */
+  --sidebar-width: 264px;
+  --content-max-width: 960px;
+  --mobile-bottomnav-height: 64px;
+  --mobile-topbar-height: 56px;
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-standard: 200ms;
+}
