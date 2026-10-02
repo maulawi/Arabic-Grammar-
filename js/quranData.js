@@ -118,9 +118,9 @@ const QG_QURAN_VERSES = {
       arabic: "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
       translation: "He will [enter to] burn in a Fire of blazing flame."
     },
-    // Book-cited, not a QURRA choice: this is the reference book's own
+    // Book-cited, not a QURRA choice: this is the reference text's own
     // Qur'anic citation for the السين sign of a verb (p.12–13, footnote 7).
-    sourceLabel: "From your reference book (p. 12–13)",
+    sourceLabel: "From the reference text (p. 12–13)",
     words: [
       { id: "111-3-w1", text: "سَيَصْلَىٰ", position: 1 },
       { id: "111-3-w2", text: "نَارًا", position: 2 },
@@ -320,11 +320,11 @@ const QG_QURAN_VERSES = {
       arabic: "سَوْفَ نُصْلِيهِمْ نَارًا",
       translation: "We will [in time] burn them in a Fire."
     },
-    // Book-cited, not a QURRA choice: the reference book's own Qur'anic
+    // Book-cited, not a QURRA choice: the reference text's own Qur'anic
     // citation for the سوف sign of a verb (p.12–13, footnote 7). Quoted as
-    // a fragment, exactly as the book itself cites it — the full ayah
+    // a fragment, exactly as the text itself cites it — the full ayah
     // continues beyond this clause.
-    sourceLabel: "From your reference book (p. 12–13)",
+    sourceLabel: "From the reference text (p. 12–13)",
     words: null
   },
 

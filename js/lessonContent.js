@@ -101,6 +101,30 @@
    other Qur'anic verse in this Part is a QURRA supplementary example
    (reused instances of verses already in js/quranData.js from Part 1),
    labeled as such in that file.
+
+   CONTENT-CORRECTION PASS — LESSONS 1.2–1.8 (pages 12–14 re-read fresh
+   from clean page images): this pass (1) rewrote every learner-facing
+   "your book" / "couldn't be read" / retrieval-commentary phrase in
+   Lessons 1.1–1.8 into plain scholarly language — sourceNote fields keep
+   their page-citation facts but no longer narrate the retrieval process;
+   (2) replaced "test" with "sign" (علامة) throughout 1.3–1.8, since the
+   source's own word is a recognition-sign, not an exam; (3) corrected
+   Lesson 1.2's treatment of قُمْ: it is no longer taught as proof that "a
+   single word can't be كلام" — see the lesson's own concept.lead,
+   example.contrast, and practice p5/p6 for the corrected explanation
+   (قُمْ is one كلمة, and also a complete كلام because its subject أَنْتَ
+   is grammatically understood, not because it's a command). Lesson 1.1's
+   absolute "a single word can never be كلام" framing (definitionBreakdown
+   + practice p3/p5) was softened to match, since 1.2 directly builds on
+   1.1 and an uncorrected absolute there would silently contradict the
+   fix one lesson later; (4) strengthened Lesson 1.6's هَلْ example into an
+   explicit two-step exclusion (not an اسم because X; not a فعل because Y;
+   therefore حرف) and added a one-line مبني / Part 10 forward-note; (5)
+   added a simple conceptTree to Lesson 1.3 (الكلمة → اسم/فعل/حرف). Fuller
+   rationale lives in this correction pass's own report, not restated here.
+   Parts 2–10 still contain the same "your reference book" phrasing this
+   pass removed from Part 1 — intentionally left untouched; out of this
+   pass's scope.
    ========================================================================== */
 
 const QG_LESSON_CONTENT = {
@@ -110,8 +134,8 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "unverified-general-tradition",
-      label: "General classical tradition — not verified against your uploaded book",
-      detail: "Your copy of the reference book couldn't be read reliably in this environment (a font-encoding corruption in its text extraction), so this lesson uses the standard Ajurrumiyyah-tradition treatment of الكلام instead of a direct citation. Flag this for correction once the book text is fixed."
+      label: "Classical Ajurrumiyyah tradition",
+      detail: "The definition of الكلام here follows the standard treatment found throughout the Ajurrumiyyah tradition — the foundational primer that Mutammimat al-Ajurrumiyyah itself builds on and completes. Its own definition sits a little earlier in the text than the pages used for the rest of Part 1."
     },
 
     intro: {
@@ -145,7 +169,7 @@ const QG_LESSON_CONTENT = {
         termAr: "المركب",
         termEn: "al-Murakkab",
         glossEn: "Composed",
-        explanation: "Built from two or more words joined together. This is the condition that rules out a single word — however meaningful — from being كلام on its own."
+        explanation: "Built from more than one part joined together. A standalone word usually fails this condition — though as the next lesson shows, a single spoken word can sometimes still count, if part of its structure is understood rather than pronounced."
       },
       {
         termAr: "المفيد",
@@ -235,9 +259,9 @@ const QG_LESSON_CONTENT = {
       {
         id: "p3",
         type: "true-false",
-        prompt: "A single word can be كلام by itself if it's an important word.",
+        prompt: "A single word counts as كلام just because it's an important word.",
         correct: false,
-        explanation: "Importance doesn't matter — كلام always needs two or more words giving one complete meaning together."
+        explanation: "Importance has nothing to do with it. What matters is whether the expression is مركب and مفيد — composed and complete in meaning. A standalone word usually isn't, unless (as you'll see next lesson) something in its structure is understood even though it isn't pronounced."
       },
       {
         id: "p4",
@@ -253,15 +277,15 @@ const QG_LESSON_CONTENT = {
       {
         id: "p5",
         type: "multiple-choice",
-        prompt: "A single word (مفرد) can't be كلام. What is it missing?",
+        prompt: "A single spoken word (مفرد), on its own, is usually not كلام. Which condition does it typically lack?",
         options: [
-          { id: "a", labelAr: "", labelEn: "It can't be مركب (composed of more than one word)" },
+          { id: "a", labelAr: "", labelEn: "It isn't مركب (composed of more than one part)" },
           { id: "b", labelAr: "", labelEn: "It's too short to pronounce" },
           { id: "c", labelAr: "", labelEn: "It has no meaning at all" },
           { id: "d", labelAr: "", labelEn: "It isn't Arabic" }
         ],
         correctOptionId: "a",
-        explanation: "A single word simply isn't مركب — that's the one piece it's missing, whatever it means on its own."
+        explanation: "A single pronounced word usually isn't مركب — that's the piece it typically lacks. (The next lesson shows one way a single word can still satisfy it: by containing something grammatically understood, not spoken.)"
       }
     ],
 
@@ -298,19 +322,19 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — page 11",
-      detail: "This lesson follows page 11 of your uploaded copy of Mutammimat al-Ajurrumiyyah (“الكلمة وأنواعها”), read directly from the page image you provided. The definition, the gloss of مفرد, and both examples below are the book's own."
+      label: "Sourced from the reference text — page 11",
+      detail: "This lesson follows page 11 of Mutammimat al-Ajurrumiyyah (“الكلمة وأنواعها”). The definition, the gloss of مفرد, and the examples below are the text's own."
     },
 
     intro: {
       titleAr: "الكلمة",
       titleEn: "What is al-Kalimah?",
-      statement: "In Lesson 1 you learned what makes a group of words a complete كلام. Now zoom in on the single building block that combines to form one: الكلمة."
+      statement: "In Lesson 1 you learned what makes a group of words a complete كلام. Now zoom in on the single building block that combines to form one: الكلمة — and see why the two categories aren't simply \"one word\" versus \"more than one.\""
     },
 
     objective: [
       "explain what الكلمة means: a single, uncomposed word",
-      "distinguish a single كلمة from a composed كلام",
+      "distinguish الكلمة (a single word) from الكلام (a complete expression) without relying on word-counting alone",
       "recognize that every كلمة is one of three types — you'll start telling them apart in the next lesson"
     ],
 
@@ -319,7 +343,7 @@ const QG_LESSON_CONTENT = {
       kind: "book-cited",
       definitionAr: "الكلمة: قَوْلٌ مُفرَدٌ، وَهِيَ: اسمٌ، وَفِعْلٌ، وَحَرْفٌ جَاءَ لِمَعنَى",
       definitionEn: "Al-Kalimah is a single utterance — and it's always one of three things: a noun, a verb, or a particle that carries a meaning.",
-      lead: "Your reference book defines الكلمة in one line. The key word is مُفرَد — tap it below to see exactly what that rules out."
+      lead: "The reference text defines الكلمة in one line. The key word is مُفرَد — tap it below to see exactly what that means. Keep in mind: الكلمة is just a count of words, while الكلام (Lesson 1) is about whether the meaning is grammatically complete. They don't map onto \"one word\" versus \"many\" as neatly as that sounds — the example ahead shows why."
     },
 
     definitionBreakdown: [
@@ -333,7 +357,7 @@ const QG_LESSON_CONTENT = {
         termAr: "مُفرَد",
         termEn: "Mufrad",
         glossEn: "Single, uncomposed",
-        explanation: "غَيْرُ مُرَكَّب — \"not composed.\" This is the opposite of مركب, the condition that made الكلام what it is in Lesson 1. One word, joined to nothing, is مفرد."
+        explanation: "غَيْرُ مُرَكَّب — \"not composed.\" الكلمة is a count of spoken words: one word, joined to nothing else, is مفرد. This is a different question from whether something counts as كلام — see the note below."
       }
     ],
 
@@ -349,15 +373,15 @@ const QG_LESSON_CONTENT = {
 
     example: {
       kind: "book-example",
-      kindLabel: "Example from your reference book (p. 11)",
+      kindLabel: "Example from the reference text (p. 11)",
       arabic: "زَيْدٌ",
       transliteration: "Zaydun",
       translation: "Zayd (a name)",
-      explanation: "One word, standing alone — the exact word Lesson 1 used to show what ISN'T كلام. Here, it's exactly what a كلمة is.",
+      explanation: "One word, standing alone — the same word Lesson 1 used to show what isn't a complete كلام. Here, it's exactly what a كلمة is: a single, uncomposed word, and nothing about its structure implies anything beyond itself.",
       contrast: {
         arabic: "قُمْ",
         translation: "“Stand!” (a command)",
-        explanation: "Also just one word — a completely different kind of word from زيد, but still a single كلمة. The book gives examples like these side by side, because كلمة covers every single word, whatever type it turns out to be."
+        explanation: "Also one كلمة — a single word, a completely different type from زيد. But don't take زيد and قُمْ as proof that \"one word\" and \"not كلام\" always go together: unlike زيد, قُمْ carries an understood subject (أَنْتَ), so it also stands as a complete كلام by itself. As a كلمة, though, it's still just one word — that part doesn't change."
       }
     },
 
@@ -439,14 +463,22 @@ const QG_LESSON_CONTENT = {
       },
       {
         id: "p5",
+        type: "true-false",
+        prompt: "قُمْ (“Stand!”) is a single كلمة — one spoken word.",
+        correct: true,
+        explanation: "Right — however it's classified as كلام, it's still just one pronounced word, so as a كلمة it's مفرد."
+      },
+      {
+        id: "p6",
         type: "multiple-choice",
-        prompt: "قُمْ (“Stand!”) is one word. What is it?",
+        prompt: "قُمْ is only one spoken word, yet grammarians also count it as a complete كلام. Why?",
         options: [
-          { id: "kalam", labelAr: "كلام" },
-          { id: "kalimah", labelAr: "كلمة" }
+          { id: "a", labelEn: "Because every command is automatically كلام, regardless of word count" },
+          { id: "b", labelEn: "Because its subject, أَنْتَ (\"you\"), is understood even though it isn't pronounced" },
+          { id: "c", labelEn: "It isn't really كلام — only كلمة" }
         ],
-        correctOptionId: "kalimah",
-        explanation: "One word, so it's a كلمة — even though it's a command, not a name like زيد."
+        correctOptionId: "b",
+        explanation: "Right — قُمْ carries an understood أَنْتَ, which supplies the rest of the grammatical structure. That's what lets a single pronounced word still be كلام — not simply because it's a command."
       }
     ],
 
@@ -467,14 +499,14 @@ const QG_LESSON_CONTENT = {
 
     summary: [
       "What الكلمة means: a single, uncomposed word — قول مفرد.",
-      "How it differs from الكلام: a كلمة is just one word; a كلام is two or more kalimahs joined into a complete meaning.",
+      "How it differs from الكلام: الكلمة counts words; الكلام asks whether the meaning is grammatically complete. A كلام is usually built from more than one كلمة — but not always: a single word like قُمْ can be كلام too, when a part of its structure (here, أَنْتَ) is understood rather than spoken.",
       "Every كلمة is one of three types — اسم, فعل, or حرف — which you'll start telling apart in the next lesson.",
       "How it appears in Qur'anic Arabic: even a short ayah like اللَّهُ الصَّمَدُ is built from two separate kalimahs."
     ],
 
     completion: {
       titleAr: "الكلمة",
-      statement: "You can now tell a single word from a complete expression."
+      statement: "You can now tell a single word from a complete expression — and you know better than to judge either one just by counting."
     }
   },
 
@@ -484,8 +516,8 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — pages 11–14",
-      detail: "The three-way classification (اسم، فعل، حرف) is the same line from page 11 you met in Lesson 2. The idea that each type gets its own test is drawn directly from how your book organizes pages 12–14 itself: “أولاً: علامات الاسم” (p.12), “ثانيًا: علامات الفعل” (p.12), and “ثالثًا: علامة الحرف” (p.14) — those three headings are this lesson's roadmap for Lessons 4–6."
+      label: "Sourced from the reference text — pages 11–14",
+      detail: "The three-way classification (اسم، فعل، حرف) is the same line from page 11 you met in Lesson 2. The idea that each type has its own distinguishing signs comes directly from how the text organizes pages 12–14 itself: “أولاً: علامات الاسم” (p.12), “ثانيًا: علامات الفعل” (p.12), and “ثالثًا: علامة الحرف” (p.14) — those three headings are this lesson's roadmap for Lessons 4–6."
     },
 
     intro: {
@@ -497,7 +529,7 @@ const QG_LESSON_CONTENT = {
     objective: [
       "explain why every Arabic word must be one of three types",
       "name the three types: اسم, فعل, and حرف",
-      "know that each type gets its own test (علامة) in the next few lessons"
+      "know that each type has its own distinguishing signs (علامات), covered in the next few lessons"
     ],
 
     concept: {
@@ -505,7 +537,7 @@ const QG_LESSON_CONTENT = {
       kind: "book-cited",
       definitionAr: "الكلمةُ ... وهي: اسمٌ، وفعلٌ، وحرفٌ جاء لمعنى",
       definitionEn: "Every kalimah is one of three things: a noun, a verb, or a particle that carries a meaning.",
-      lead: "You met this line in Lesson 2. Now it becomes the roadmap for everything ahead — three types, three lessons, three tests."
+      lead: "You met this line in Lesson 2. Now it becomes the roadmap for everything ahead — three types, three lessons, and a set of distinguishing signs (علامات) for recognizing each one."
     },
 
     definitionBreakdown: [
@@ -513,25 +545,34 @@ const QG_LESSON_CONTENT = {
         termAr: "اسم",
         termEn: "Ism",
         glossEn: "Noun — Lesson 4",
-        explanation: "Page 12 of your book calls this “أولاً: علامات الاسم” — the noun gets the first set of tests."
+        explanation: "The text groups the noun's signs under the heading “أولاً: علامات الاسم” (p. 12) — “First: the signs of the noun.”"
       },
       {
         termAr: "فعل",
         termEn: "Fi'l",
         glossEn: "Verb — Lesson 5",
-        explanation: "Page 12 of your book calls this “ثانيًا: علامات الفعل” — the second set of tests."
+        explanation: "The text groups the verb's signs under “ثانيًا: علامات الفعل” (p. 12) — “Second: the signs of the verb.”"
       },
       {
         termAr: "حرف",
         termEn: "Harf",
         glossEn: "Particle — Lesson 6",
-        explanation: "Page 14 of your book calls this “ثالثًا: علامة الحرف” — and defines it by what it ISN'T: neither of the other two."
+        explanation: "The text introduces the particle under “ثالثًا: علامة الحرف” (p. 14) — “Third: the sign of the particle” — and defines it by what it ISN'T: neither of the other two."
       }
     ],
 
+    conceptTree: {
+      root: { ar: "الكلمة", en: "Every Arabic word" },
+      branches: [
+        { ar: "اسم", en: "Noun — Lesson 4" },
+        { ar: "فعل", en: "Verb — Lesson 5" },
+        { ar: "حرف", en: "Particle — Lesson 6" }
+      ]
+    },
+
     example: {
       kind: "book-example",
-      kindLabel: "Familiar example, plus a new one from your book (p. 14)",
+      kindLabel: "Familiar example, plus one from the reference text (p. 14)",
       arabic: "قَامَ زَيْدٌ",
       transliteration: "Qāma Zaydun",
       translation: "Zayd stood up.",
@@ -539,7 +580,7 @@ const QG_LESSON_CONTENT = {
       contrast: {
         arabic: "هَلْ",
         translation: "“Is…?” (a question particle)",
-        explanation: "A single حرف — from your book's own example on page 14. It doesn't name anything (not اسم) and doesn't report an event with a time (not فعل). It only makes sense attached to a sentence."
+        explanation: "A single حرف — the text's own example on page 14. It doesn't name anything on its own (not اسم) and doesn't report an event with a time (not فعل). It only makes sense attached to a sentence."
       }
     },
 
@@ -558,7 +599,7 @@ const QG_LESSON_CONTENT = {
         type: "true-false",
         prompt: "Every single Arabic word must be either اسم, فعل, or حرف.",
         correct: true,
-        explanation: "Right — the book's own definition of كلمة (Lesson 2) says exactly this: وهي اسمٌ، وفعلٌ، وحرفٌ جاء لمعنى."
+        explanation: "Right — the text's own definition of كلمة (Lesson 2) says exactly this: وهي اسمٌ، وفعلٌ، وحرفٌ جاء لمعنى."
       },
       {
         id: "p2",
@@ -570,7 +611,7 @@ const QG_LESSON_CONTENT = {
           { id: "c", labelAr: "حرف" }
         ],
         correctOptionId: "a",
-        explanation: "Right — it names something. You'll learn the exact test for this in the next lesson."
+        explanation: "Right — it names something. You'll learn the exact sign for this in the next lesson."
       },
       {
         id: "p3",
@@ -582,20 +623,20 @@ const QG_LESSON_CONTENT = {
           { id: "c", labelAr: "حرف" }
         ],
         correctOptionId: "a",
-        explanation: "Right — it reports an event. You'll learn the exact test for this in Lesson 5."
+        explanation: "Right — it reports an event. You'll learn the exact sign for this in Lesson 5."
       },
       {
         id: "p4",
         type: "true-false",
         prompt: "حرف has its own full, positive definition — a description of what it IS.",
         correct: false,
-        explanation: "Not quite — your book defines حرف by exclusion: ما لا يصلح معه دليل الاسم ولا دليل الفعل (Lesson 6). It's identified by what it ISN'T, not by what it is."
+        explanation: "Not quite — the text defines حرف by exclusion: ما لا يصلح معه دليل الاسم ولا دليل الفعل (Lesson 6). It's identified by what it ISN'T, not by what it is."
       }
     ],
 
     summary: [
       "Every single Arabic كلمة is one of exactly three types: اسم، فعل، or حرف — no exceptions.",
-      "Each type has its own test (علامة): the noun's in Lesson 4, the verb's in Lesson 5, and the particle's in Lesson 6.",
+      "Each type has its own distinguishing signs (علامات): the noun's in Lesson 4, the verb's in Lesson 5, and the particle's in Lesson 6.",
       "حرف is unusual: it's defined by exclusion — whatever isn't an اسم and isn't a فعل.",
       "This three-way split is the foundation everything else in Arabic grammar builds on."
     ],
@@ -612,19 +653,19 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — page 12 (footnote 1)",
-      detail: "The definition (“الاسم: كلمة دلت على معنى في نفسها ولم تقترن بزمن”) is the book's own footnote on page 12. زَيْدٌ is the book's example from page 11, reused here as the noun illustration."
+      label: "Sourced from the reference text — page 12 (footnote 1)",
+      detail: "The definition (“الاسم: كلمة دلت على معنى في نفسها ولم تقترن بزمن”) is the text's own footnote on page 12. زَيْدٌ is the text's example from page 11, reused here as the noun illustration."
     },
 
     intro: {
       titleAr: "الاسم",
       titleEn: "The Noun (Ism)",
-      statement: "You know every word is اسم, فعل, or حرف. Now meet the first type — and the simple test that identifies it."
+      statement: "You know every word is اسم, فعل, or حرف. Now meet the first type — and the simple sign that identifies it."
     },
 
     objective: [
-      "explain what الاسم means and the test that identifies it",
-      "distinguish an اسم from a فعل using the “tied to a time” test",
+      "explain what الاسم means and the sign that identifies it",
+      "distinguish an اسم from a فعل by whether it's tied to a time",
       "recognize nouns inside a Qur'anic expression"
     ],
 
@@ -633,7 +674,7 @@ const QG_LESSON_CONTENT = {
       kind: "book-cited",
       definitionAr: "الاسمُ: كَلِمَةٌ دَلَّتْ عَلَى مَعْنًى فِي نَفْسِهَا وَلَمْ تَقْتَرِنْ بِزَمَنٍ",
       definitionEn: "A noun is a word that indicates a meaning in itself, without being tied to any particular time.",
-      lead: "Your book packs this into one line. The second half — لم تقترن بزمن — is the real test. Tap each part below."
+      lead: "The reference text packs this into one line. The second half — لم تقترن بزمن — is the real sign to look for. Tap each part below."
     },
 
     definitionBreakdown: [
@@ -653,7 +694,7 @@ const QG_LESSON_CONTENT = {
 
     example: {
       kind: "book-example",
-      kindLabel: "Example from your reference book (p. 11)",
+      kindLabel: "Example from the reference text (p. 11)",
       arabic: "زَيْدٌ",
       transliteration: "Zaydun",
       translation: "Zayd (a name)",
@@ -703,7 +744,7 @@ const QG_LESSON_CONTENT = {
         type: "true-false",
         prompt: "الاسم is a word tied to a specific time.",
         correct: false,
-        explanation: "The opposite — لم تقترن بزمن: a noun is NOT tied to any time. That's actually the test that separates it from a verb."
+        explanation: "The opposite — لم تقترن بزمن: a noun is NOT tied to any time. That's actually the sign that separates it from a verb."
       },
       {
         id: "p2",
@@ -727,7 +768,7 @@ const QG_LESSON_CONTENT = {
       {
         id: "p4",
         type: "multiple-choice",
-        prompt: "What is the test that tells you a word is NOT an اسم?",
+        prompt: "What is the sign that tells you a word is NOT an اسم?",
         options: [
           { id: "a", labelEn: "It's tied to a time" },
           { id: "b", labelEn: "It's short" },
@@ -751,14 +792,14 @@ const QG_LESSON_CONTENT = {
         { id: "no", labelEn: "No" }
       ],
       correctOptionId: "yes",
-      explanation: "Yes — it means something on its own and carries no time. That's exactly the test for اسم, wherever you find it."
+      explanation: "Yes — it means something on its own and carries no time. That's exactly the sign of اسم, wherever you find it."
     },
 
     summary: [
       "الاسم: a word that means something on its own, without being tied to any time.",
-      "The test: does it carry a time (past, present, command)? If yes, it's not a noun.",
-      "زَيْدٌ names something with no time attached — the book's own example.",
-      "Every noun you'll meet — names, descriptions, pronouns — passes this same test."
+      "The sign: does it carry a time (past, present, command)? If yes, it's not a noun.",
+      "زَيْدٌ names something with no time attached — the text's own example.",
+      "Every noun you'll meet — names, descriptions, pronouns — shows this same sign."
     ],
 
     completion: {
@@ -773,8 +814,8 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — pages 12–14",
-      detail: "The definition of الفعل (“كلمة دلت على معنى في نفسها واقترنت بأحد الأزمنة الثلاثة”) is the book's own footnote on page 12. The three verb types — ماضٍ، مضارع، أمر — and the examples قَامَ and قُومي are drawn directly from pages 13–14. Labeling قُلْ (in the Qur'an example below) as فعل أمر is QURRA's own application of the book's stated definition to a word the book itself doesn't explicitly categorize — flagged clearly in the lesson content itself, not presented as a direct book citation."
+      label: "Sourced from the reference text — pages 12–14",
+      detail: "The definition of الفعل (“كلمة دلت على معنى في نفسها واقترنت بأحد الأزمنة الثلاثة”) is the text's own footnote on page 12. The three verb types — ماضٍ، مضارع، أمر — and the examples قَامَ and قُومي are drawn directly from pages 13–14. Labeling قُلْ (in the Qur'an example below) as فعل أمر is QURRA's own application of the text's stated definition to a word the text itself doesn't explicitly categorize — flagged clearly in the lesson content itself, not presented as a direct citation."
     },
 
     intro: {
@@ -784,7 +825,7 @@ const QG_LESSON_CONTENT = {
     },
 
     objective: [
-      "explain what الفعل means and the test that identifies it",
+      "explain what الفعل means and the sign that identifies it",
       "name the three verb types: ماضٍ, مضارع, and أمر",
       "identify the one فعل among several أسماء in a Qur'anic expression"
     ],
@@ -802,25 +843,25 @@ const QG_LESSON_CONTENT = {
         termAr: "ماضٍ",
         termEn: "Madi",
         glossEn: "Past",
-        explanation: "An action that already happened. Book example: قَامَ — “stood” (already happened)."
+        explanation: "An action that already happened. Example from the text: قَامَ — “stood” (already happened)."
       },
       {
         termAr: "مضارع",
         termEn: "Mudari'",
         glossEn: "Present / future",
-        explanation: "An action happening now or about to happen. Book example: يَقُومُ — “is standing / stands.”"
+        explanation: "An action happening now or about to happen. Example from the text: يَقُومُ — “is standing / stands.”"
       },
       {
         termAr: "أمر",
         termEn: "Amr",
         glossEn: "Command",
-        explanation: "An action being requested to happen after the moment of speaking — the book's own definition: “ما يدل على حدث يُطلب حصوله بعد زمن التكلم.” Book example: قُومي — “Stand!” (to a woman)."
+        explanation: "An action being requested to happen after the moment of speaking — the text's own definition: “ما يدل على حدث يُطلب حصوله بعد زمن التكلم.” Example from the text: قُومي — “Stand!” (to a woman)."
       }
     ],
 
     example: {
       kind: "book-example",
-      kindLabel: "Example from your reference book (p. 13)",
+      kindLabel: "Example from the reference text (p. 13)",
       arabic: "قَامَ",
       transliteration: "Qāma",
       translation: "He stood (already happened)",
@@ -842,7 +883,7 @@ const QG_LESSON_CONTENT = {
       wordNotes: {
         "112-1-w1": {
           conceptLabel: "فعل أمر",
-          explanation: "قُلْ means “Say!” — it requests an action after the moment of speaking. That fits the book's own definition of أمر — QURRA's own reading of this word using that definition; the book doesn't label this specific word itself."
+          explanation: "قُلْ means “Say!” — it requests an action after the moment of speaking. That fits the text's own definition of أمر — this is QURRA's own reading of this particular word using that definition; the text doesn't categorize this specific word itself."
         },
         "112-1-w2": { conceptLabel: "اسم", explanation: "هُوَ (“He”) — a pronoun. It means something by itself, with no time attached — an اسم, like you learned last lesson." },
         "112-1-w3": { conceptLabel: "اسم", explanation: "اللَّهُ — a name, no time attached — اسم." },
@@ -857,7 +898,7 @@ const QG_LESSON_CONTENT = {
       promptContext: "Al-Ikhlas 112:1",
       question: "Tap the one word in this ayah that is a فعل.",
       correctWordId: "112-1-w1",
-      correctFeedback: "Right — قُلْ (“Say!”) is the فعل. It requests something happen after the moment of speaking — the book's own test for أمر, applied here.",
+      correctFeedback: "Right — قُلْ (“Say!”) is the فعل. It requests something happen after the moment of speaking — the text's own definition of أمر, applied here.",
       incorrectFeedback: "Not quite — that word is an اسم (it means something on its own, with no time attached). Look for the one word that carries a time or a request.",
       wordNotes: {
         "112-1-w1": { conceptLabel: "فعل أمر", explanation: "قُلْ — “Say!” Requests an action after the moment of speaking." },
@@ -897,7 +938,7 @@ const QG_LESSON_CONTENT = {
           { id: "c", labelAr: "مضارع" }
         ],
         correctOptionId: "a",
-        explanation: "Right — it's the book's own example of أمر: requesting an action after the moment of speaking."
+        explanation: "Right — it's the text's own example of أمر: requesting an action after the moment of speaking."
       },
       {
         id: "p4",
@@ -917,7 +958,7 @@ const QG_LESSON_CONTENT = {
           { id: "d", labelEn: "There's no real difference" }
         ],
         correctOptionId: "a",
-        explanation: "Exactly — the presence of a time (or a request for one) is the whole test."
+        explanation: "Exactly — the presence of a time (or a request for one) is the whole sign to look for."
       }
     ],
 
@@ -933,13 +974,13 @@ const QG_LESSON_CONTENT = {
         { id: "no", labelEn: "No" }
       ],
       correctOptionId: "yes",
-      explanation: "Yes — it carries a time (already happened, ماضٍ), which is exactly the test for فعل."
+      explanation: "Yes — it carries a time (already happened, ماضٍ), which is exactly the sign of فعل."
     },
 
     summary: [
       "الفعل: a word tied to one of three tenses — ماضٍ (past), مضارع (present), or أمر (command).",
-      "The test: does it carry a time or a request for one? If yes, it's a فعل.",
-      "قَامَ (ماضٍ) and قُومي (أمر) are your book's own examples.",
+      "The sign: does it carry a time or a request for one? If yes, it's a فعل.",
+      "قَامَ (ماضٍ) and قُومي (أمر) are the text's own examples.",
       "In قُلْ هُوَ اللَّهُ أَحَدٌ, only قُلْ is a فعل — the other three words are أسماء."
     ],
 
@@ -955,8 +996,8 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — page 14",
-      detail: "The definition (“ما لا يصلح معه دليل الاسم ولا دليل الفعل”) and all three examples — هَلْ، في، لَمْ — are the book's own, from page 14. لَمْ also happens to be the exact particle in the Qur'an example below, which is QURRA's own supplementary choice of verse (112:3), not from the book."
+      label: "Sourced from the reference text — page 14",
+      detail: "The definition (“ما لا يصلح معه دليل الاسم ولا دليل الفعل”) and all three examples — هَلْ، في، لَمْ — are the text's own, from page 14. لَمْ also happens to be the exact particle in the Qur'an example below, which is QURRA's own supplementary choice of verse (112:3)."
     },
 
     intro: {
@@ -966,8 +1007,8 @@ const QG_LESSON_CONTENT = {
     },
 
     objective: [
-      "explain how الحرف is defined — by exclusion, not by a positive test",
-      "recognize your book's own حرف examples: هَلْ، في، لَمْ",
+      "explain how الحرف is defined — by exclusion, not by a positive description",
+      "recognize the text's own حرف examples: هَلْ، في، لَمْ",
       "identify a حرف inside a Qur'anic expression"
     ],
 
@@ -983,28 +1024,28 @@ const QG_LESSON_CONTENT = {
       {
         termAr: "ما لا يصلح معه دليل الاسم",
         termEn: "mā lā yaṣluḥu maʿahu dalīl al-ism",
-        glossEn: "fails every noun-test",
-        explanation: "It doesn't just mean something on its own — it needs another word attached to make sense."
+        glossEn: "admits no sign of a noun",
+        explanation: "It doesn't just mean something on its own, the way زَيْدٌ does — so none of the noun's distinguishing signs apply to it."
       },
       {
         termAr: "ولا دليل الفعل",
         termEn: "wa lā dalīl al-fiʿl",
-        glossEn: "and fails every verb-test",
-        explanation: "It also carries no time and requests nothing. Unlike اسم and فعل, which you can test FOR, حرف is only ever what's left over."
+        glossEn: "and no sign of a verb",
+        explanation: "It also carries no time and requests nothing, the way قَامَ does — so none of the verb's signs apply either. Unlike اسم and فعل, which you can confirm by their own signs, حرف is only ever what's left once both are ruled out."
       }
     ],
 
     example: {
       kind: "book-example",
-      kindLabel: "Examples from your reference book (p. 14)",
+      kindLabel: "Examples from the reference text (p. 14)",
       arabic: "هَلْ",
       transliteration: "Hal",
       translation: "Is…? / Does…? (a question particle)",
-      explanation: "By itself, هَلْ doesn't name anything and doesn't carry a time. It only makes sense in front of a sentence, asking a question about it. That's حرف.",
+      explanation: "Walk through the exclusion: is هَلْ an اسم? No — unlike زَيْدٌ, it doesn't mean something fixed on its own, with no time attached. Is it a فعل? No — unlike قَامَ, it carries no time and asks for nothing. Since it fails both, it belongs to the third category: حرف. (Lessons 7–8 will give you the full, formal signs for each — for now, the logic of exclusion is the point.)",
       contrast: {
         arabic: "فِي",
         translation: "“in” (a preposition)",
-        explanation: "Also from your book's own list — فِي doesn't mean anything by itself either. “فِي” what? It needs a noun after it to complete its meaning."
+        explanation: "Also from the text's own list — فِي doesn't mean anything complete by itself either. “فِي” what? It needs a noun after it (فِي الْبَيْتِ — “in the house”) to complete its meaning, which is exactly why it fails the noun and verb signs and falls into حرف too."
       }
     },
 
@@ -1014,9 +1055,9 @@ const QG_LESSON_CONTENT = {
       ayahRef: "112:3",
       arabic: "لَمْ يَلِدْ وَلَمْ يُولَدْ",
       translation: "He neither begets nor is born.",
-      notice: "لَمْ appears twice in this ayah — and it's the exact particle your book uses as its own example of حرف (page 14). Notice how it never means anything by itself; it only works attached to the verb after it.",
+      notice: "لَمْ appears twice in this ayah — and it's the exact particle the reference text uses as its own example of حرف (page 14). Notice how it never means anything by itself; it only works attached to the verb after it.",
       wordNotes: {
-        "112-3-w1": { conceptLabel: "حرف", explanation: "لَمْ — this is your book's own example of a حرف (page 14). By itself it means nothing; it only works attached to a verb, making it negative." },
+        "112-3-w1": { conceptLabel: "حرف", explanation: "لَمْ — this is the text's own example of a حرف (page 14). By itself it means nothing; it only works attached to a verb, making it negative." },
         "112-3-w2": { conceptLabel: "فعل", explanation: "يَلِدْ (“he begets”) — carries a time/action. A فعل, made negative by the لَمْ before it." },
         "112-3-w3": { conceptLabel: "حرف + حرف", explanation: "وَلَمْ — و (“and”) joins two حروف together here: the conjunction و and the same لَمْ you just saw, written as one word." },
         "112-3-w4": { conceptLabel: "فعل", explanation: "يُولَدْ (“he is born”) — also a فعل, negated by the لَمْ attached before it." }
@@ -1028,12 +1069,12 @@ const QG_LESSON_CONTENT = {
       ayahRef: "112:3",
       instanceId: "1.6-notice",
       promptContext: "Al-Ikhlas 112:3",
-      question: "Tap the word that's a pure حرف — the same one your book uses as its own example.",
+      question: "Tap the word that's a pure حرف — the same one the reference text uses as its own example.",
       correctWordId: "112-3-w1",
-      correctFeedback: "Right — لَمْ is your book's own حرف example. It means nothing alone; it only works attached to the فعل after it, making it negative. (وَلَمْ later in the ayah is the same حرف again, just joined to و — “and.”)",
+      correctFeedback: "Right — لَمْ is the text's own حرف example. It means nothing alone; it only works attached to the فعل after it, making it negative. (وَلَمْ later in the ayah is the same حرف again, just joined to و — “and.”)",
       incorrectFeedback: "Not quite — that word either carries a time (فعل) or is joined with another particle. Look for the standalone لَمْ.",
       wordNotes: {
-        "112-3-w1": { conceptLabel: "حرف", explanation: "لَمْ — means nothing on its own. Your book's own example (p. 14)." },
+        "112-3-w1": { conceptLabel: "حرف", explanation: "لَمْ — means nothing on its own. The text's own example (p. 14)." },
         "112-3-w2": { conceptLabel: "فعل", explanation: "يَلِدْ — carries a time/action." },
         "112-3-w3": { conceptLabel: "حرف + حرف", explanation: "وَلَمْ — the same لَمْ, joined to the حرف و." },
         "112-3-w4": { conceptLabel: "فعل", explanation: "يُولَدْ — carries a time/action." }
@@ -1046,19 +1087,19 @@ const QG_LESSON_CONTENT = {
         type: "true-false",
         prompt: "حرف has a positive definition — a description of what it IS, like اسم and فعل do.",
         correct: false,
-        explanation: "No — حرف is defined only by exclusion: ما لا يصلح معه دليل الاسم ولا دليل الفعل. It's whatever fails both other tests."
+        explanation: "No — حرف is defined only by exclusion: ما لا يصلح معه دليل الاسم ولا دليل الفعل. It's whatever admits neither sign."
       },
       {
         id: "p2",
         type: "multiple-choice",
-        prompt: "Which of these is your book's own example of a حرف?",
+        prompt: "Which of these is the reference text's own example of a حرف?",
         options: [
           { id: "a", labelAr: "هَلْ" },
           { id: "b", labelAr: "زَيْدٌ" },
           { id: "c", labelAr: "قَامَ" }
         ],
         correctOptionId: "a",
-        explanation: "Right — هَلْ، في، and لَمْ are the book's own three examples (p. 14)."
+        explanation: "Right — هَلْ، في، and لَمْ are the text's own three examples (p. 14)."
       },
       {
         id: "p3",
@@ -1079,6 +1120,18 @@ const QG_LESSON_CONTENT = {
         ],
         correctOptionId: "a",
         explanation: "Right — it attaches to يَلِدْ and negates it. On its own, لَمْ means nothing."
+      },
+      {
+        id: "p5",
+        type: "multiple-choice",
+        prompt: "هَلْ is not an اسم, and it is not a فعل. What follows?",
+        options: [
+          { id: "a", labelEn: "It must be a حرف — those are the only three categories" },
+          { id: "b", labelEn: "It isn't a real كلمة at all" },
+          { id: "c", labelEn: "It's a mix of اسم and فعل" }
+        ],
+        correctOptionId: "a",
+        explanation: "Right — every كلمة is اسم, فعل, or حرف (Lesson 3). Ruling out the first two is itself enough to place a word in the third category."
       }
     ],
 
@@ -1098,9 +1151,10 @@ const QG_LESSON_CONTENT = {
     },
 
     summary: [
-      "الحرف: defined by exclusion — whatever fails the test for both اسم and فعل.",
-      "Your book's own examples: هَلْ، في، and لَمْ.",
+      "الحرف: defined by exclusion — whatever admits the sign of neither اسم nor فعل.",
+      "The text's own examples: هَلْ، في، and لَمْ.",
       "لَمْ never stands alone — it attaches to a فعل and negates it, as in لَمْ يَلِدْ.",
+      "حرف is مبني — its form never changes — and a few particles carry grammatical effects of their own, which you'll meet much later, in Part 10.",
       "All three word types are now yours: اسم (a time-free meaning), فعل (a time or request), and حرف (neither)."
     ],
 
@@ -1116,18 +1170,18 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — page 12",
-      detail: "All five signs (الإسناد إليه، الخفض، التنوين، دخول الألف واللام، حروف الخفض) are the book's own list, page 12. This lesson teaches ال and تنوين in full — the two that don't require i'rab or sentence-role knowledge — and names the other three so nothing is hidden, deferring them to a later Part where case (الخفض) and sentence roles (الإسناد) are properly covered. الكَلِمَةُ is used as a ال-example because it's a genuine word from your book's own page 11 heading."
+      label: "Sourced from the reference text — page 12",
+      detail: "All five signs (الإسناد إليه، الخفض، التنوين، دخول الألف واللام، حروف الخفض) are the text's own list, page 12. This lesson teaches ال and تنوين in full — the two that don't require i'rab or sentence-role knowledge — and names the other three so nothing is hidden, deferring them to a later Part where case (الخفض) and sentence roles (الإسناد) are properly covered. الكَلِمَةُ is used as a ال-example because it's a genuine word from the text's own page 11 heading."
     },
 
     intro: {
       titleAr: "علامات الاسم",
       titleEn: "Signs of a Noun",
-      statement: "You already know what an اسم means. Now learn the actual tests your book gives for spotting one."
+      statement: "You already know what an اسم means. Now learn the actual signs the reference text gives for spotting one."
     },
 
     objective: [
-      "name your book's five signs of an اسم",
+      "name the reference text's five signs of an اسم",
       "apply the two visual signs — ال and تنوين — to real words",
       "recognize the ال sign inside a Qur'anic expression"
     ],
@@ -1137,7 +1191,7 @@ const QG_LESSON_CONTENT = {
       kind: "book-cited",
       definitionAr: "الاسمُ يُعرَفُ بـ: الإسنادِ إليه، وبالخَفْض، وبالتنوين، وبدخولِ الألفِ واللام، وحروفِ الخَفْض",
       definitionEn: "A noun is recognized by: being predicated of, accepting the genitive case, accepting nunation, taking the definite article (al-), or following a preposition.",
-      lead: "Your book lists five signs. Two of them — ال and تنوين — you can spot immediately just by looking at a word. The other three depend on grammar you haven't learned yet, so this lesson focuses on the two visual ones and simply names the rest."
+      lead: "The reference text lists five signs. Two of them — ال and تنوين — you can spot immediately just by looking at a word. The other three depend on grammar you haven't learned yet, so this lesson focuses on the two visual ones and simply names the rest."
     },
 
     definitionBreakdown: [
@@ -1145,44 +1199,44 @@ const QG_LESSON_CONTENT = {
         termAr: "الألف واللام (ال)",
         termEn: "al-",
         glossEn: "the definite article — taught now",
-        explanation: "If ال can attach to the front of a word, it's an اسم. You'll practice this test in this lesson."
+        explanation: "If ال can attach to the front of a word, it's an اسم. You'll practice this sign in this lesson."
       },
       {
         termAr: "التنوين",
         termEn: "tanwin",
         glossEn: "nunation (ـٌ ـً ـٍ) — taught now",
-        explanation: "A final ن sound, written but not spelled with the letter ن, that only ever attaches to a noun — never a verb or particle. Book example: زَيْدٌ."
+        explanation: "A final ن sound, written but not spelled with the letter ن, that only ever attaches to a noun — never a verb or particle. Example from the text: زَيْدٌ."
       },
       {
         termAr: "الإسناد إليه",
         termEn: "isnād ilayh",
         glossEn: "being predicated of — later",
-        explanation: "Having something said ABOUT it, like زيد in قَامَ زَيْدٌ. This test needs sentence roles you haven't learned yet — you'll meet it properly in a later Part."
+        explanation: "Having something said ABOUT it, like زيد in قَامَ زَيْدٌ. This sign needs sentence roles you haven't learned yet — you'll meet it properly in a later Part."
       },
       {
         termAr: "الخفض",
         termEn: "khafḍ",
         glossEn: "the genitive case — later",
-        explanation: "A case-ending test — this depends on إعراب, which is a later Part of this course, not Part 1."
+        explanation: "A case-ending sign — this depends on إعراب, which is a later Part of this course, not Part 1."
       },
       {
         termAr: "حروف الخفض",
         termEn: "ḥurūf al-khafḍ",
         glossEn: "following a preposition — later",
-        explanation: "If a preposition (like مِنْ or إلى) can come right before it, it's a noun. A useful, visual test — but it pairs closely with الخفض above, so it's deferred to the same later lesson."
+        explanation: "If a preposition (like مِنْ or إلى) can come right before it, it's a noun. A useful, visual sign — but it pairs closely with الخفض above, so it's deferred to the same later lesson."
       }
     ],
 
     example: {
       kind: "book-example",
-      kindLabel: "Examples from your reference book (pp. 11–12)",
+      kindLabel: "Examples from the reference text (pp. 11–12)",
       arabic: "زَيْدٌ",
       transliteration: "Zaydun",
       translation: "Zayd — note the ٌ ending",
       explanation: "That small ٌ mark at the end is تنوين — and تنوين only ever attaches to a noun. Its presence alone tells you زَيْدٌ is an اسم.",
       contrast: {
         arabic: "الكَلِمَةُ",
-        translation: "“the word” (the exact word from your book's own heading, p. 11)",
+        translation: "“the word” (the exact word from the text's own heading, p. 11)",
         explanation: "ال is attached directly to the front — only a noun can take ال, so that alone identifies it too. (Notice it has no تنوين here — a definite noun with ال never takes تنوين, a small extra detail beyond this lesson.)"
       }
     },
@@ -1193,10 +1247,10 @@ const QG_LESSON_CONTENT = {
       ayahRef: "112:2",
       arabic: "اللَّهُ الصَّمَدُ",
       translation: "Allah, the Eternal Refuge.",
-      notice: "Look at how both words in this ayah begin: ال. That's not decoration — it's literally one of your book's own tests for اسم.",
+      notice: "Look at how both words in this ayah begin: ال. That's not decoration — it's literally one of the reference text's own signs of اسم.",
       wordNotes: {
         "112-2-w1": { conceptLabel: "اسم — بال", explanation: "اللَّهُ starts with ال — one of the two visual noun-signs you just learned." },
-        "112-2-w2": { conceptLabel: "اسم — بال", explanation: "الصَّمَدُ also starts with ال — same sign, same test." }
+        "112-2-w2": { conceptLabel: "اسم — بال", explanation: "الصَّمَدُ also starts with ال — same sign." }
       }
     },
 
@@ -1205,8 +1259,8 @@ const QG_LESSON_CONTENT = {
       ayahRef: "112:2",
       instanceId: "1.7-notice",
       promptContext: "Al-Ikhlas 112:2",
-      question: "Tap each word — both pass the same test. Which sign do they share?",
-      correctFeedback: "Right — both start with ال, one of your book's own signs of an اسم (p. 12).",
+      question: "Tap each word — both show the same sign. Which one do they share?",
+      correctFeedback: "Right — both start with ال, one of the reference text's own signs of an اسم (p. 12).",
       wordNotes: {
         "112-2-w1": { conceptLabel: "اسم — بال", explanation: "ال is attached to the front. That alone confirms اسم." },
         "112-2-w2": { conceptLabel: "اسم — بال", explanation: "Same sign here too — ال attached to the front." }
@@ -1238,12 +1292,12 @@ const QG_LESSON_CONTENT = {
         type: "true-false",
         prompt: "ال can attach to the front of a فعل or a حرف.",
         correct: false,
-        explanation: "No — ال only ever attaches to an اسم. That's why it's one of the book's five tests."
+        explanation: "No — ال only ever attaches to an اسم. That's why it's one of the text's five signs."
       },
       {
         id: "p4",
         type: "multiple-choice",
-        prompt: "Your book lists five total signs for اسم. How many does this lesson teach in depth?",
+        prompt: "The reference text lists five total signs for اسم. How many does this lesson teach in depth?",
         options: [
           { id: "a", labelEn: "Two — ال and تنوين" },
           { id: "b", labelEn: "All five" },
@@ -1282,7 +1336,7 @@ const QG_LESSON_CONTENT = {
     },
 
     summary: [
-      "Your book lists five signs of اسم: الإسناد إليه، الخفض، التنوين، ال، and حروف الخفض.",
+      "The reference text lists five signs of اسم: الإسناد إليه، الخفض، التنوين، ال، and حروف الخفض.",
       "This lesson taught the two you can spot on sight: تنوين (زَيْدٌ) and ال (الكَلِمَةُ).",
       "The other three signs depend on grammar (i'rab, sentence roles) you'll learn in later Parts.",
       "اللَّهُ and الصَّمَدُ both show the ال sign — easy to spot once you know to look for it."
@@ -1290,7 +1344,7 @@ const QG_LESSON_CONTENT = {
 
     completion: {
       titleAr: "علامات الاسم",
-      statement: "You can now test a word for اسم — not just guess."
+      statement: "You can now check a word against real signs for اسم — not just guess."
     }
   },
 
@@ -1300,19 +1354,19 @@ const QG_LESSON_CONTENT = {
 
     sourceNote: {
       status: "book-cited",
-      label: "Sourced from your reference book — pages 12–13",
-      detail: "All four signs (قَدْ، السين، سوف، تاء التأنيث) and their examples (قَدْ قَامَ، قَامَتْ) are the book's own, page 12. سَيَصْلَىٰ (Al-Masad 3) and سَوْفَ نُصْلِيهِمْ (An-Nisa 4:56) are the book's own Qur'anic citations for السين and سوف respectively — footnote 7, continuing from page 12 onto page 13 — not QURRA's selection. Flagged for your awareness: both citations happen to be verses about the Fire; that's the book's own choice, illustrating a purely grammatical point (see the Phase 6 report)."
+      label: "Sourced from the reference text — pages 12–13",
+      detail: "All four signs (قَدْ، السين، سوف، تاء التأنيث) and their examples (قَدْ قَامَ، قَامَتْ) are the text's own, page 12. سَيَصْلَىٰ (Al-Masad 3) and سَوْفَ نُصْلِيهِمْ (An-Nisa 4:56) are the text's own Qur'anic citations for السين and سوف respectively — footnote 7, continuing from page 12 onto page 13 — not QURRA's selection. Both citations happen to be verses about the Fire; that's the text's own choice, illustrating a purely grammatical point."
     },
 
     intro: {
       titleAr: "علامات الفعل",
       titleEn: "Signs of a Verb",
-      statement: "One more set of tests, and Part 1 is complete: the four signs that confirm a فعل."
+      statement: "One more set of signs, and Part 1 is complete: the four that confirm a فعل."
     },
 
     objective: [
-      "name your book's four signs of a فعل: قَدْ، السين، سوف، تاء التأنيث",
-      "apply the السين/سوف tests to two of your book's own Qur'anic citations",
+      "name the reference text's four signs of a فعل: قَدْ، السين، سوف، تاء التأنيث",
+      "apply the السين/سوف signs to two of the text's own Qur'anic citations",
       "recognize that any single one of the four signs is enough to confirm a فعل"
     ],
 
@@ -1329,31 +1383,31 @@ const QG_LESSON_CONTENT = {
         termAr: "قَدْ",
         termEn: "qad",
         glossEn: "attaches to the front",
-        explanation: "Book example: قَدْ قَامَ زَيْدٌ — “Zayd had (indeed) stood.”"
+        explanation: "Example from the text: قَدْ قَامَ زَيْدٌ — “Zayd had (indeed) stood.”"
       },
       {
         termAr: "السين",
         termEn: "sa-",
         glossEn: "attaches to the front",
-        explanation: "A single س attached to the front of a مضارع verb, pushing its meaning toward the near future. Book's own Qur'anic citation: سَيَصْلَىٰ — “he will burn” (Al-Masad 3)."
+        explanation: "A single س attached to the front of a مضارع verb, pushing its meaning toward the near future. The text's own Qur'anic citation: سَيَصْلَىٰ — “he will burn” (Al-Masad 3)."
       },
       {
         termAr: "سوف",
         termEn: "sawfa",
         glossEn: "a separate word before it",
-        explanation: "Placed before a مضارع verb, for the further future. Book's own Qur'anic citation: سَوْفَ نُصْلِيهِمْ — “We will burn them” (An-Nisa 4:56)."
+        explanation: "Placed before a مضارع verb, for the further future. The text's own Qur'anic citation: سَوْفَ نُصْلِيهِمْ — “We will burn them” (An-Nisa 4:56)."
       },
       {
         termAr: "تاء التأنيث",
         termEn: "tā' al-ta'nīth",
         glossEn: "attaches to the end",
-        explanation: "A ـتْ ending attached to a ماضي verb when its doer is feminine. Book example: قَامَتْ — “she stood.”"
+        explanation: "A ـتْ ending attached to a ماضي verb when its doer is feminine. Example from the text: قَامَتْ — “she stood.”"
       }
     ],
 
     example: {
       kind: "book-example",
-      kindLabel: "Example from your reference book (p. 12)",
+      kindLabel: "Example from the reference text (p. 12)",
       arabic: "قَدْ قَامَ",
       transliteration: "Qad qāma",
       translation: "[he] had indeed stood",
@@ -1371,9 +1425,9 @@ const QG_LESSON_CONTENT = {
       ayahRef: "111:3",
       arabic: "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
       translation: "He will [enter to] burn in a Fire of blazing flame.",
-      notice: "This is your book's own Qur'anic citation for السين (pp. 12–13, footnote). Look at the very first word: سَيَصْلَىٰ. The س attached to its front is exactly the sign you just learned — and it's what identifies this as a فعل, pushing its meaning toward the future.",
+      notice: "This is the reference text's own Qur'anic citation for السين (pp. 12–13, footnote). Look at the very first word: سَيَصْلَىٰ. The س attached to its front is exactly the sign you just learned — and it's what identifies this as a فعل, pushing its meaning toward the future.",
       wordNotes: {
-        "111-3-w1": { conceptLabel: "فعل — بالسين", explanation: "سَيَصْلَىٰ — the س at the front is the sign. Your book's own citation for this exact test." },
+        "111-3-w1": { conceptLabel: "فعل — بالسين", explanation: "سَيَصْلَىٰ — the س at the front is the sign. The text's own citation for this exact sign." },
         "111-3-w2": { conceptLabel: "اسم", explanation: "نَارًا — a noun (and notice its تنوين ending — the sign from Lesson 7!)." },
         "111-3-w3": { conceptLabel: "— جزء من الوصف", explanation: "ذَاتَ — part of the phrase “ذَاتَ لَهَبٍ” (“of blazing flame”), describing the fire." },
         "111-3-w4": { conceptLabel: "اسم", explanation: "لَهَبٍ — a noun, “flame.”" }
@@ -1387,7 +1441,7 @@ const QG_LESSON_CONTENT = {
       promptContext: "Al-Masad 111:3",
       question: "Tap the one word carrying the سين sign of a فعل.",
       correctWordId: "111-3-w1",
-      correctFeedback: "Right — سَيَصْلَىٰ. The س prefix is your book's own test for a فعل, right here in its own Qur'anic citation.",
+      correctFeedback: "Right — سَيَصْلَىٰ. The س prefix is the reference text's own sign of a فعل, right here in its own Qur'anic citation.",
       incorrectFeedback: "Not quite — that word doesn't carry the س prefix. Look for the one word that begins with سَ.",
       wordNotes: {
         "111-3-w1": { conceptLabel: "فعل — بالسين", explanation: "سَيَصْلَىٰ — carries the سين sign at its front." },
@@ -1403,7 +1457,7 @@ const QG_LESSON_CONTENT = {
         type: "true-false",
         prompt: "قَدْ can attach before a فعل.",
         correct: true,
-        explanation: "Right — قَدْ قَامَ is the book's own example."
+        explanation: "Right — قَدْ قَامَ is the text's own example."
       },
       {
         id: "p2",
@@ -1458,14 +1512,14 @@ const QG_LESSON_CONTENT = {
         { id: "no", labelEn: "No" }
       ],
       correctOptionId: "yes",
-      explanation: "Yes — سوف is your book's own second sign of a فعل (same footnote as السين), and this is the book's own citation for it."
+      explanation: "Yes — سوف is the text's own second sign of a فعل (same footnote as السين), and this is the text's own citation for it."
     },
 
     summary: [
       "الفعل has four possible signs: قَدْ، السين، سوف، and تاء التأنيث — any ONE confirms it.",
       "قَدْ and السين attach to the FRONT; تاء التأنيث attaches to the END; سوف is a separate word before it.",
-      "Your book cites its own Qur'anic examples for السين (سَيَصْلَىٰ, Al-Masad 3) and سوف (سَوْفَ نُصْلِيهِمْ, An-Nisa 4:56).",
-      "Between Lessons 4–8, you now have real tests — not guesses — for all three word types."
+      "The reference text cites its own Qur'anic examples for السين (سَيَصْلَىٰ, Al-Masad 3) and سوف (سَوْفَ نُصْلِيهِمْ, An-Nisa 4:56).",
+      "Between Lessons 4–8, you now have real signs — not guesses — for all three word types."
     ],
 
     completion: {
